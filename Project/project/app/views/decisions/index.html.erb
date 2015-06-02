@@ -30,7 +30,7 @@
 <p>
 <img src="<%= product.image %>">
 </p>
-<%= product.votes %> <%= link_to '+1',:controller => :decisions, :action => :vote %>
+<%= product.votes %> <%= link_to '+1', vote_path(product),:controller => :decisions, :action => :vote %>
 </div>
 </div>
 

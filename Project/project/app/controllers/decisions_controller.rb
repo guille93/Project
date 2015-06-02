@@ -18,7 +18,7 @@ class DecisionsController < ApplicationController
 		@product = Product.find params[:id]
 		@product.votes += 1
 		@product.save
-		redirect_to product_path(@product)
+		redirect_to root_path(@product)
 	end
 	private
 	def decision_params

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :decisions do
   	resources :products
   end
-  get '/products/:id/vote' => 'decisions#vote'
+  get '/products/:id/vote' => 'decisions#vote', as: 'vote'
 	get 'signup'  => 'users#new' 
 	resources :users
 	get '/login'=> 'sessions#new'
