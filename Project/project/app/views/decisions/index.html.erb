@@ -15,20 +15,21 @@
   <ul>
   	<a>Logo</a>
     <a>logo</a>
-    <a>Registro</a>
-    <a>Login</a>
+    <a><%= link_to 'Registro', signup_path%></a>
+    <a><%= link_to 'login', login_path%></a>
   </ul>
 </nav>
-<div id="barra-lateral">Esta es la barra lateral</div>
+
 <div class="row">
-  <div class="3">
+  <div class="col-md-3">
+    <div id="barra-lateral">Esta es la barra lateral</div>
   </div>
 <% @decisions.each do |decision| %>
 <div class="col-md-3 col-sm-3">
 <% decision.products.each do |product| %>
 <%= product.name %>
 <p>
-<%= image_tag product.image %>
+<img src="<%= product.image %>">
 </p>
 <%= product.votes %>
 
