@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="">
+
+        <title></title>
+    </head>
+
+    <body>
+
+   <nav id="navegacion">
+  <ul>
+  	<a>Logo</a>
+    <a>logo</a>
+    <a>Registro</a>
+    <a>Login</a>
+  </ul>
+</nav>
+<div id="barra-lateral">Esta es la barra lateral</div>
+<div class="row">
+  <div class="3">
+  </div>
+<% @decisions.each do |decision| %>
+<div class="col-md-3 col-sm-3">
+<% decision.products.each do |product| %>
+<%= product.name %>
+<p>
+<%= image_tag product.image %>
+</p>
+<%= product.votes %>
+
+</div>
+
+<% end %>
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+    <%= decision.description %></div>
+  </div>
+<% end %>
+<%= link_to 'new',  new_decision_path(@decision)%>
+
+
+    <script type="text/javascript" src=""></script>
+    </body>
+</html>
