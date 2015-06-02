@@ -1,49 +1,42 @@
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="">
-
-        <title></title>
-    </head>
-
-    <body>
-
-   <nav id="navegacion">
-  <ul>
+<nav id="navegacion">
+  <ul >
   	<a>Logo</a>
-    <a>logo</a>
+    <a><%= link_to 'Nueva Decisión',  new_decision_path(@decision)%></a>
     <a><%= link_to 'Registro', signup_path%></a>
     <a><%= link_to 'login', login_path%></a>
   </ul>
 </nav>
 
-<div class="row">
+<div>
   <div class="col-md-3">
-    <div id="barra-lateral">Esta es la barra lateral</div>
+    <div id="barra-lateral"><u> Categorías</u>
+        <ul id="lista-lateral">
+            <li>Música</li>
+            <li>Libros</li>
+            <li>Conciertos</li>
+            <li>Informática</li>
+            <li>Cine</li>
+
+
+        </ul>
+
+
+    </div>
   </div>
 <% @decisions.each do |decision| %>
-<div class="col-md-3 col-sm-3">
 <% decision.products.each do |product| %>
+<div class="col-md-4 col-sm-4 options">
 <%= product.name %>
 <p>
 <img src="<%= product.image %>">
 </p>
-<%= product.votes %>
-
+<%= product.votes %> <%= link_to '+1',:controller => :decisions, :action => :vote %>
+</div>
 </div>
 
 <% end %>
-  <div class="row">
-    <div class="col-md-6 col-sm-6">
+  <div>
+    <div class="col-md-10 col-sm-10 description">
     <%= decision.description %></div>
   </div>
 <% end %>
-<%= link_to 'new',  new_decision_path(@decision)%>
-
-
-    <script type="text/javascript" src=""></script>
-    </body>
-</html>

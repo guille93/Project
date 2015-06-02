@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get "/" => "decisions#index"
+  get "/" => "decisions#index", as: 'root'
   resources :decisions do
-  resources :products
-    end
-    get 'signup'  => 'users#new' 
+  	resources :products
+  end
+  get '/products/:id/vote' => 'decisions#vote'
+	get 'signup'  => 'users#new' 
 	resources :users
 	get '/login'=> 'sessions#new'
-	post 'login' => 'sessions#create'
-	delete 'logout' => 'sessions#destroy'
+	post '/login' => 'sessions#create'
+	delete '/logout' => 'sessions#destroy'
+
 end

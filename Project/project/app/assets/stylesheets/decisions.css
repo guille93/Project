@@ -1,11 +1,45 @@
-#navegacion {background-color:#40bff9; border:black 1px solid; height:70px;}
+#navegacion {color:#337AE8; border:black 1px solid; height:70px;}
 #navegacion a {float:left; list-style:none; padding-left: 230px;}
 #barra-lateral {
-            background-color: orange;
             float: left;
             width:140px;
             height:100%;
+            margin-top: 93px;
         }
-body{
-	font-family: 'Open Sans Condensed', sans-serif;
+img {
+	width: 200px;
+	height: 200px;
+	border: 2px solid grey;
+	margin: 0;
+	padding: 0;
+	border-radius: 35px;
+	overflow: hidden;
+}
+
+.description {
+	text-align: center;
+}
+
+.options {
+
+	margin-top: 70px;
+	color:blue;
+	text-align: center;
+	margin-left: -36px
+}
+
+* {
+	font-family: 'Crimson Text', bold;
+	font-size: 20px;
+}
+
+li {
+
+
+}
+
+#lista-lateral li {
+list-style:none;
+padding-bottom: 38px;
+
 }
