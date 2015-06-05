@@ -14,17 +14,14 @@
 ActiveRecord::Schema.define(version: 20150602074148) do
 
   create_table "decisions", force: :cascade do |t|
+    t.string   "name_1"
+    t.integer  "vote_1"
+    t.string   "image_1"
+    t.string   "name_2"
+    t.integer  "vote_2"
+    t.string   "image_2"
     t.string   "category"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "decision_id"
-    t.string   "image"
-    t.integer  "votes"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

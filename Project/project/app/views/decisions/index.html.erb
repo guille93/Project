@@ -29,23 +29,22 @@
     </div>
   </div>
 
-<% @decisions.each do |decision| %>
-<% decision.products.each do |product| %>
-
 <div class="col-md-4 col-sm-4 options">
-  <div id="borde">
-<%= product.name %>
-<p>
-<img  class="decisionimage" src="<%= product.image %>">
+    <div id="borde">
+      <%= @randomdecision.name_1 %>
+      <%= @randomdecision.name_2 %>
+      <p>
+   <img  class="decisionimage" src="<%= @randomdecision.image_1 %>">
+   <img  class="decisionimage" src="<%= @randomdecision.image_2 %>">
 </p>
-<%= product.votes %><%= link_to image_tag("like.png"), vote_path(product),:controller => :decisions, :action => :vote%>
 
+
+   <%= @randomdecision.vote_1 %><%= link_to image_tag("like.png"), vote_path(@randomdecision),:controller => :decisions, :action => :vote1%>
+   <%= @randomdecision.vote_2 %><%= link_to image_tag("like.png"), vote2_path(@randomdecision), :controller => :decisions, :action => :vote2%>
 </div>
 </div>
 </div>
-<% end %>
-  <div>
-    <div class="col-md-10 col-sm-10 description">
-    <%= decision.description %></div>
+
+   <div class="col-md-10 col-sm-10 description">
+    <%= @randomdecision.description %>
   </div>
-<% end %>

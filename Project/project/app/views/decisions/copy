@@ -1,0 +1,20 @@
+    <div class="col-md-4 col-sm-4 options">
+    <div id="borde">
+      <%= decision.name_1 %>
+      <%= decision.name_2 %>
+    <p>
+      <img  class="decisionimage" src="<%= decision.image_1 %>">
+      <img  class="decisionimage" src="<%= decision.image_2 %>">
+    </p>
+  <%= decision.vote_1 %><%= link_to image_tag("like.png"), vote_path(decision),:controller => :decisions, :action => :vote1%>
+
+<%= decision.vote_2 %><%= link_to image_tag("like.png"), vote2_path(decision), :controller => :decisions, :action => :vote2%>
+
+</div>
+</div>
+</div>
+
+  <div>
+    <div class="col-md-10 col-sm-10 description">
+    <%= decision.description %></div>
+  </div>

@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   
   get "/" => "decisions#index", as: 'root'
-  resources :decisions do
-  	resources :products
-  end
-  
-  get '/products/:id/vote' => 'decisions#vote', as: 'vote'
+  resources :decisions
+  get '/decision/:id/vote_1' => 'decisions#vote1', as: 'vote'
+  get '/decision/:id/vote_2' => 'decisions#vote2', as: 'vote2'
 	get 'signup'  => 'users#new' 
 	resources :users
 	get 'login'=> 'sessions#new'
