@@ -1,4 +1,5 @@
 class DecisionsController < ApplicationController
+	before_action :require_user, only: [:new]
 	def index
 		@decisions = Decision.all
 	end
@@ -9,7 +10,7 @@ class DecisionsController < ApplicationController
 	def create
 		@decision = Decision.new decision_params
 		if @decision.save
-			render 'show', id: @decision.id
+			render new_decision_product_path(@product)
 		else
 			render 'new'
 		end

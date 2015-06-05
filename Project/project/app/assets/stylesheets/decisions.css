@@ -5,15 +5,11 @@
             width:140px;
             height:100%;
             margin-top: 93px;
+            font-size: 25px;
         }
 img {
-	width: 200px;
-	height: 200px;
-	border: 2px solid grey;
-	margin: 0;
-	padding: 0;
-	border-radius: 35px;
-	overflow: hidden;
+	width: 20px;
+	height: 20px;
 }
 
 .description {
@@ -25,12 +21,14 @@ img {
 	margin-top: 70px;
 	color:blue;
 	text-align: center;
-	margin-left: -36px
+	margin-left: -36px;
+
+    padding-bottom: 143px;
 }
 
 * {
 	font-family: 'Crimson Text', bold;
-	font-size: 20px;
+	font-size: 36px;
 }
 
 li {
@@ -41,5 +39,32 @@ li {
 #lista-lateral li {
 list-style:none;
 padding-bottom: 38px;
+font-size: 20px;
 
 }
+#borde{
+	border:black 1px solid;
+	padding-bottom: 10px;
+}
+
+.decisionimage {
+width: 200px;
+	height: 200px;
+	border: 2px solid grey;
+	margin: 0;
+	padding: 0;
+	border-radius: 35px;
+	overflow: hidden;
+}
+
+.votes {
+	font-size: 42px;
+	border:black 1px solid;
+	color:black;
+
+}
+body {
+	background-image: url("1.jpg");
+}
+
+

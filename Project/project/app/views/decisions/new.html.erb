@@ -1,10 +1,12 @@
 <%= form_for @decision do |f| %>
  <%= f.label :category %>
- <%= f.text_field :category %>
+ <%= f.select :category,  options_for_select([ "Música", "Libros", "Consolas/Videojuegos", "Informática", "Conciertos", "Cine"], "Música") %>
  <br>
  <%= f.label :description %>
  <%= f.text_field :description %>
  <br>
-
  <%= f.submit 'Save' %>
- <%end %>
+ <% end %>
+
+ 
+
