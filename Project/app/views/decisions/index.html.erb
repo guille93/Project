@@ -1,55 +1,54 @@
-<div id='cssmenu'>
-<ul>
-   <li class='active'><a href='#'></a></li>
-   <li><a><%= link_to 'Inicio',  root_path(@decision)%></a></li>
-   <li><a><%= link_to 'Nueva Decisión',  new_decision_path(@decision)%></a></li>
-  <% if current_user %> 
-      <li><a><%= link_to "Log out", logout_path, method: "delete" %></a></li>
-      <span class="email"><%= current_user.email %></span>
-  <% else %> 
-      <li><a><%= link_to "Login", 'login' %></a></li> 
-      <li><a><%= link_to "Signup", 'signup' %></a></li>
+  <div id='cssmenu'>
+    <ul>
+        <li class='active'><a href='#'></a></li>
+        <li><a><%= link_to 'Inicio',  root_path(@decision)%></a></li>
+        <li><a><%= link_to 'Nueva Decisión',  new_decision_path(@decision)%></a></li>
+        <% if current_user %> 
+            <li><a><%= link_to "Log out", logout_path, method: "delete" %></a></li>
+            <span class="email"><%= current_user.email %></span>
+        <% else %> 
+            <li><a><%= link_to "Login", 'login' %></a></li> 
+            <li><a><%= link_to "Signup", 'signup' %></a></li>
 
-<% end %>  
-</ul>
-</div>
-
-<div>
-  <div class="col-md-3">
-    <div id="barra-lateral"><u> Categorías</u>
-        <ul id="lista-lateral">
-            <li>Música</li>
-            <li>Libros</li>
-            <li>Conciertos</li>
-            <li>Informática</li>
-            <li>Cine</li>
-
-
-        </ul>
-
-
-    </div>
+        <% end %>  
+    </ul>
   </div>
+    <div class="col-md-3">
+      <div id="barra-lateral"><u> Categorías</u>
+          <ul id="lista-lateral">
+              <li>Música</li>
+              <li>Libros</li>
+              <li>Conciertos</li>
+              <li>Informática</li>
+              <li>Cine</li>
+          </ul>
+      </div>
+    </div>
 
-<div class="col-md-4 col-sm-4 options">
-    <div id="borde">
-      <span class="name1"><%= @randomdecision.name_1 %></span>
-      <span class="name2"><%= @randomdecision.name_2 %></span>
-      <p>
-   <img  class="decisionimage" src="<%= @randomdecision.image_1 %>">
-   <img  class="decisionimage" src="<%= @randomdecision.image_2 %>">
 
-<span id="vote1">
+    <div  id="efect" >
+      <section id="contain">
+        <div class="col-md-4 col-sm-4 options">
+                <p class="name1"><%= @randomdecision.name_1 %></p>
+                <img  class="decisionimage" src="<%= @randomdecision.image_1 %>">
+      
+                <p id="vote1">
 
-   <%= @randomdecision.vote_1 %><%= link_to image_tag("like.png"), vote_path(@randomdecision),:controller => :decisions, :action => :vote1%>
-</span>
-<span id="vote2">
-   <%= @randomdecision.vote_2 %><%= link_to image_tag("like.png"), vote2_path(@randomdecision), :controller => :decisions, :action => :vote2%>
-</span>
+                <%= @randomdecision.vote_1 %><%= link_to image_tag("like.png"), vote_path(@randomdecision),:controller => :decisions, :action => :vote1%>
+                </p>
+        </div>
+        <span>
+        <img class="vs" src="versus.gif"/>
+      </span>
+    <div class="col-md-4 col-sm-4 options">
+        <p class="name2"><%= @randomdecision.name_2 %></p>
+        <img  class="decisionimage" src="<%= @randomdecision.image_2 %>">
+        <p id="vote2">
+        <%= @randomdecision.vote_2 %><%= link_to image_tag("like.png"), vote2_path(@randomdecision), :controller => :decisions, :action => :vote2%>
+        </p>
+    </div>
 </div>
-</div>
-</div>
-
+  </section>
    <div class="col-md-10 col-sm-10 description">
     <%= @randomdecision.description %>
   </div>

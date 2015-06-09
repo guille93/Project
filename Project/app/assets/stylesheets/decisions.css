@@ -17,13 +17,8 @@ img {
 }
 
 .options {
-
-	margin-top: 70px;
 	color:blue;
 	text-align: center;
-	margin-left: -36px;
-
-    padding-bottom: 143px;
 }
 
 * {
@@ -44,34 +39,24 @@ font-size: 20px;
 }
 #borde{
 	border:black 1px solid;
-	padding-bottom: 80px;
-	padding-left: 143px;
-	margin-left: 97px;
-	margin-right: -476px;
+
 }
 
 .decisionimage {
-width: 200px;
+	width: 200px;
 	height: 200px;
 	border: 2px solid grey;
-	margin-right: 161px;
 	padding: 0;
 	border-radius: 35px;
 	overflow: hidden;
 }
 
 #vote1{
-	text-align: left;
-	margin-left: -146px;
 
 
 }
 #vote2{
-	margin-left: 336px;
 
-}
-body {
-	background-image: url("1.jpg");
 }
 
 
@@ -82,9 +67,41 @@ body {
 }
 
 .name1 {
-	margin-right: 251px;
 }
 .name2 {
-	margin-right: 113px;
-	margin-left: 14px;
+
+}
+
+.fondo{
+}
+
+#musica {
+
+	font-family: segoe script;
+}
+#conciertos {
+
+	font-family: segoe script;
+}
+#cine {
+
+	font-family: segoe script;
+}
+#informatica {
+
+	font-family: segoe script;
+}
+#libros {
+
+	font-family: segoe script;
+}
+
+
+#contain {
+	margin-top: 107px;
+	margin-right: 20px;
+}
+
+#vs {
+
 }

@@ -111,3 +111,8 @@ $(document).ready(function() {
 });
 })(jQuery);
 
+
+$(document).ready(function()
+{
+ $('#efect').hide().fadeIn(5000); 
+});
