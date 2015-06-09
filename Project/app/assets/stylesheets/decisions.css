@@ -44,23 +44,30 @@ font-size: 20px;
 }
 #borde{
 	border:black 1px solid;
-	padding-bottom: 10px;
+	padding-bottom: 80px;
+	padding-left: 143px;
+	margin-left: 97px;
+	margin-right: -476px;
 }
 
 .decisionimage {
 width: 200px;
 	height: 200px;
 	border: 2px solid grey;
-	margin: 0;
+	margin-right: 161px;
 	padding: 0;
 	border-radius: 35px;
 	overflow: hidden;
 }
 
-.votes {
-	font-size: 42px;
-	border:black 1px solid;
-	color:black;
+#vote1{
+	text-align: left;
+	margin-left: -146px;
+
+
+}
+#vote2{
+	margin-left: 336px;
 
 }
 body {
@@ -68,3 +75,16 @@ body {
 }
 
 
+.email{
+	font-size: 30px;
+	margin-left: 852px;
+	color:white;
+}
+
+.name1 {
+	margin-right: 251px;
+}
+.name2 {
+	margin-right: 113px;
+	margin-left: 14px;
+}

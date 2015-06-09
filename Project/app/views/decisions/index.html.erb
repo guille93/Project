@@ -5,9 +5,11 @@
    <li><a><%= link_to 'Nueva Decisión',  new_decision_path(@decision)%></a></li>
   <% if current_user %> 
       <li><a><%= link_to "Log out", logout_path, method: "delete" %></a></li>
+      <span class="email"><%= current_user.email %></span>
   <% else %> 
       <li><a><%= link_to "Login", 'login' %></a></li> 
       <li><a><%= link_to "Signup", 'signup' %></a></li>
+
 <% end %>  
 </ul>
 </div>
@@ -31,16 +33,19 @@
 
 <div class="col-md-4 col-sm-4 options">
     <div id="borde">
-      <%= @randomdecision.name_1 %>
-      <%= @randomdecision.name_2 %>
+      <span class="name1"><%= @randomdecision.name_1 %></span>
+      <span class="name2"><%= @randomdecision.name_2 %></span>
       <p>
    <img  class="decisionimage" src="<%= @randomdecision.image_1 %>">
    <img  class="decisionimage" src="<%= @randomdecision.image_2 %>">
-</p>
 
+<span id="vote1">
 
    <%= @randomdecision.vote_1 %><%= link_to image_tag("like.png"), vote_path(@randomdecision),:controller => :decisions, :action => :vote1%>
+</span>
+<span id="vote2">
    <%= @randomdecision.vote_2 %><%= link_to image_tag("like.png"), vote2_path(@randomdecision), :controller => :decisions, :action => :vote2%>
+</span>
 </div>
 </div>
 </div>
