@@ -114,5 +114,13 @@ $(document).ready(function() {
 
 $(document).ready(function()
 {
- $('#efect').hide().fadeIn(2000); 
+ $('#efect').hide().fadeIn(3000); 
 });
+
+$(document).ready(function(){
+   $("#enlace").click(function(evento){
+      evento.preventDefault();
+      $("#destino").load("home.html.erb");
+      });
+})
+

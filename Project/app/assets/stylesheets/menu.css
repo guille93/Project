@@ -4,7 +4,7 @@
 #cssmenu ul li,
 #cssmenu ul li a,
 #cssmenu #menu-button {
-  margin-top: -5px;
+  margin-top: -9px;
   padding: 0;
   border: 0;
   list-style: none;
@@ -53,8 +53,8 @@
   float: right;
 }
 #cssmenu > ul > li > a {
-  padding: 16px 20px;
-  font-size: 14px;
+  padding: 20px 24px;
+  font-size: 18px;
   color: #ffffff;
   letter-spacing: 1px;
   text-transform: uppercase;
