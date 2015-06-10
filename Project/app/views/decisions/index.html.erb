@@ -18,7 +18,6 @@
           <ul id="lista-lateral">
               <li>Música</li>
               <li>Libros</li>
-              <li>Conciertos</li>
               <li>Informática</li>
               <li>Cine</li>
           </ul>
@@ -37,18 +36,23 @@
                 <%= @randomdecision.vote_1 %><%= link_to image_tag("like.png"), vote_path(@randomdecision),:controller => :decisions, :action => :vote1%>
                 </p>
         </div>
-        <span>
-        <img class="vs" src="versus.gif"/>
-      </span>
+        
+    <img class="col-md-1" src="versus.gif"/>
+      
     <div class="col-md-4 col-sm-4 options">
         <p class="name2"><%= @randomdecision.name_2 %></p>
-        <img  class="decisionimage" src="<%= @randomdecision.image_2 %>">
+          <img  class="decisionimage" src="<%= @randomdecision.image_2 %>">
         <p id="vote2">
-        <%= @randomdecision.vote_2 %><%= link_to image_tag("like.png"), vote2_path(@randomdecision), :controller => :decisions, :action => :vote2%>
+          <%= @randomdecision.vote_2 %><%= link_to image_tag("like.png"), vote2_path(@randomdecision), :controller => :decisions, :action => :vote2%>
         </p>
+
     </div>
+         
+         <div class="col-md-10 col-sm-10 description">
+            <p>
+                <%= @randomdecision.description %>
+           </p>
+          </div>
+        
 </div>
   </section>
-   <div class="col-md-10 col-sm-10 description">
-    <%= @randomdecision.description %>
-  </div>

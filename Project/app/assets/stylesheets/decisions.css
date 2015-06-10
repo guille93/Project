@@ -73,6 +73,8 @@ font-size: 20px;
 }
 
 .fondo{
+	background-image: url("fondo.jpg");
+
 }
 
 #musica {

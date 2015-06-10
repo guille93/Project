@@ -114,5 +114,5 @@ $(document).ready(function() {
 
 $(document).ready(function()
 {
- $('#efect').hide().fadeIn(5000); 
+ $('#efect').hide().fadeIn(2000); 
 });
