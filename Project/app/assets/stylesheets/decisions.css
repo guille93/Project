@@ -8,8 +8,9 @@
             font-size: 25px;
         }
 img {
-	width: 70px;
-	height: 62px;
+	padding-top: -10px;
+	width: 37px;
+	height: 42px;
 }
 
 .description {
@@ -24,6 +25,7 @@ img {
 * {
 	font-family: 'Crimson Text', bold;
 	font-size: 36px;
+
 }
 
 li {
@@ -48,6 +50,9 @@ font-size: 20px;
 	border: 2px solid grey;
 	padding: 0;
 	border-radius: 35px;
+-webkit-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
+box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 	overflow: hidden;
 }
 
@@ -56,9 +61,15 @@ font-size: 20px;
 
 }
 #vote2{
+	padding-top: 6px;
 	margin-right: -49px;
 }
-
+#vote2img {
+	margin-left: 76px;
+}
+#vote1img {
+	margin-left: 76px;
+}
 
 .email{
 	font-size: 25px;
@@ -107,4 +118,15 @@ font-size: 20px;
 	margin-right: 21px;
 	padding-bottom: 4px;
 
+}
+
+#show {
+	text-align: center;
+	list-style: none;
+	margin-top: 131px;
+	border: 2px solid grey;
+	border-radius: 35px;
+-webkit-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
+box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 }

@@ -9,6 +9,7 @@ class CreateDecisions < ActiveRecord::Migration
     	t.text :image_2
     	t.string :category
     	t.string :description
+      t.integer :user_id
       t.timestamps null: false
     end
   end

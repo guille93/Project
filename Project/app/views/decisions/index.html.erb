@@ -6,7 +6,8 @@
       
                 <p id="vote1">
 
-                <%= @randomdecision.vote_1 %><%= link_to image_tag("like.png"), vote_path(@randomdecision),:controller => :decisions, :action => :vote1%>
+                <%= @randomdecision.vote_1 %><span id="vote1img"><%= link_to image_tag("like.png"), vote_path(@randomdecision),:controller => :decisions, :action => :vote1%>
+                </span>
                 </p>
         </div>
         

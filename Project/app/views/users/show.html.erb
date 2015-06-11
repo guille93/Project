@@ -1,1 +1,15 @@
-show.html.erb
+
+<div class="row">
+	<div class="col-md-5 col-sm-5">
+	<img id="avatar" src="<%= current_user.avatar %>">
+	<h1> <%= current_user.first_name %> <%= current_user.last_name %> </h1>
+	<h2> <%= current_user.email %> </h2>
+	<h3><%= current_user.created_at %> </h3>
+</div>
+
+	<div class="col-md-5 col-sm-5" id="show">
+	<% @decisions.each do |decision| %>
+		<li><%= decision.name_1 %> Vs <%= decision.name_2 %> </li>
+	<% end %>
+	</div>
+</div>

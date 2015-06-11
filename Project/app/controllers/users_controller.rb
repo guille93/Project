@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     		redirect_to '/signup' 
   		end 
 	end
+
+  def show
+      @user = User.find params[:id]
+      @decisions = @user.decisions
+  end
 	
   private
   def user_params
