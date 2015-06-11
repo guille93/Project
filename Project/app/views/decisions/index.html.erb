@@ -6,7 +6,7 @@
       
                 <p id="vote1">
 
-                <%= @randomdecision.vote_1 %><span id="vote1img"><%= link_to image_tag("like.png"), vote_path(@randomdecision),:controller => :decisions, :action => :vote1%>
+                <%= @randomdecision.vote_1 %><span id="vote1img"><%= link_to '', vote_path(@randomdecision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%>
                 </span>
                 </p>
         </div>
@@ -16,9 +16,10 @@
         <p class="name2"><%= @randomdecision.name_2 %></p>
           <img  class="decisionimage" src="<%= @randomdecision.image_2 %>">
         <p id="vote2">
-          <%= @randomdecision.vote_2 %><span id="vote2img"><%= link_to image_tag("like.png"), vote2_path(@randomdecision), :controller => :decisions, :action => :vote2%>
+          <%= @randomdecision.vote_2 %><span id="vote2img"><%= link_to '', vote2_path(@randomdecision), :controller => :decisions, :action => :vote2, class: "glyphicon glyphicon-ok"%>
         </span>
         </p>
+
 
     </div>
          

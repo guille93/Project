@@ -7,6 +7,9 @@ class DecisionsController < ApplicationController
 	def new
 		@decision = Decision.new 
 	end
+	def  show
+		@decision = Decision.find params[:id]
+	end
 
 
 	def create

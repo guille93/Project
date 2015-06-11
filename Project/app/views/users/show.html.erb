@@ -1,15 +1,23 @@
 
 <div class="row">
-	<div class="col-md-5 col-sm-5">
-	<img id="avatar" src="<%= current_user.avatar %>">
-	<h1> <%= current_user.first_name %> <%= current_user.last_name %> </h1>
-	<h2> <%= current_user.email %> </h2>
-	<h3><%= current_user.created_at %> </h3>
+	<div class="col-md-6 col-sm-6 user">
+	<img id="userimg" src="<%= current_user.avatar %>">
+	<p>
+	Usuario: <%= current_user.first_name %> <%= current_user.last_name %> 
+	</p>
+	<p>
+	Email: <%= current_user.email %> 
+	</p>
+	<p>
+	Fecha de Registro: <%= current_user.created_at %> 
+	</p>
 </div>
 
+
 	<div class="col-md-5 col-sm-5" id="show">
+		<h1> Tus decisiones </h1>
 	<% @decisions.each do |decision| %>
-		<li><%= decision.name_1 %> Vs <%= decision.name_2 %> </li>
+		<li><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Show', decision%> </li>
 	<% end %>
 	</div>
 </div>

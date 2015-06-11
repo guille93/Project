@@ -23,8 +23,8 @@ img {
 }
 
 * {
-	font-family: 'Crimson Text', bold;
-	font-size: 36px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 31px;
 
 }
 
@@ -49,6 +49,8 @@ font-size: 20px;
 	height: 330px;
 	border: 2px solid grey;
 	padding: 0;
+	margin-top: 16px;
+	margin-bottom: 16px;
 	border-radius: 35px;
 -webkit-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
@@ -66,6 +68,7 @@ box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 }
 #vote2img {
 	margin-left: 76px;
+	text-decoration: none;
 }
 #vote1img {
 	margin-left: 76px;
@@ -73,7 +76,7 @@ box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 
 .email{
 	font-size: 25px;
-	margin-left: 1326px;
+	margin-left: 1222px;
 	color:white;
 	padding-top: 24px;
 }
@@ -112,10 +115,10 @@ box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 }
 
 #avatar {
-	height:40px;
-	width: 40px;
+	height:42px;
+	width: 42px;
 	border-radius: 35px;
-	margin-right: 21px;
+	margin-right: 14px;
 	padding-bottom: 4px;
 
 }
@@ -129,4 +132,19 @@ box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 -webkit-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
+}
+
+.user p {
+	font-size: 20px;
+}
+.user {
+	margin-left: 10px;
+}
+
+#userimg {
+  height: 250px;
+  width: 250px;
+  border: 5px solid #3DB2E1;
+  margin-top: 70px;
+
 }
