@@ -80,9 +80,9 @@ box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 
 .email{
 	font-size: 25px;
-	margin-left: 1222px;
 	color:white;
 	padding-top: 24px;
+	float: right;
 }
 
 .name1 {
@@ -206,4 +206,9 @@ a {
 .email a {
 	font-size: 25px;
 	color: white;
+}
+
+.email a:hover {
+	color:#E1ECE1 ;
+	text-decoration: none;
 }

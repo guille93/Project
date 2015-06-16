@@ -1,5 +1,5 @@
 class DecisionsController < ApplicationController
-	before_action :require_user, only: [:new]
+	before_action :require_user, only: [:new, :vote1, :vote2]
 	def index
 		@decisions = Decision.all
 		@randomdecision = @decisions.sample
@@ -16,13 +16,14 @@ class DecisionsController < ApplicationController
 
 
 	def create
-		@decision = Decision.new decision_params
+		@decisions = Decision.new decision_params
 		if @decision.save
 			redirect_to root_path
 		else
 			render 'new'
 		end
 	end
+	
 	def vote1
 		@decision = Decision.find params[:id]
 		@decision.vote_1 += 1
@@ -34,6 +35,12 @@ class DecisionsController < ApplicationController
 		@decision.vote_2 += 1
 		@decision.save
 		redirect_to root_path(@decision)
+	end
+	def destroy
+		@decision = Decision.find params[:id]
+		@decision.destroy
+		redirect_to  user_path(current_user)
+
 	end
 	private
 	def decision_params

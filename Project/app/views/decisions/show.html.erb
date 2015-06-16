@@ -1,17 +1,14 @@
 <div  id="efect" >
       <section id="contain">
         <div class="col-md-6 col-sm-6 options">
-                <p class="name1"><%= @decision.name_1 %></p>
-                <img  class="decisionimage" src="<%= @decision.image_1 %>">
-      
-                <p id="vote1">
+            <p class="name1"><%= @decision.name_1 %></p>
+            <img  class="decisionimage" src="<%= @decision.image_1 %>">
+            <p id="vote1">
 
-                <%= @decision.vote_1 %><span id="vote1img"><%= link_to '', vote_path(@decision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%>
-                </span>
-                </p>
+            <%= @decision.vote_1 %><span id="vote1img"><%= link_to '', vote_path(@decision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%></span>
+            </p>
         </div>
         
-      
     <div class="col-md-6 col-sm-6 options">
         <p class="name2"><%= @decision.name_2 %></p>
           <img  class="decisionimage" src="<%= @decision.image_2 %>">
@@ -19,15 +16,12 @@
           <%= @decision.vote_2 %><span id="vote2img"><%= link_to '', vote2_path(@decision), :controller => :decisions, :action => :vote2, class: "glyphicon glyphicon-ok"%>
         </span>
         </p>
-
-
     </div>
          
-         <div class="col-md-12 col-sm-12 description">
-            <p>
-                <%= @decision.description %>
-           </p>
-          </div>
-        
+    <div class="col-md-12 col-sm-12 description">
+         <p>
+           <%= @decision.description %>
+        </p>
+    </div>
+     </section>   
 </div>
-  </section>

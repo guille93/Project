@@ -3,23 +3,21 @@
 <head>
   <title>Project</title>
   <%= stylesheet_link_tag    'application'%>
-  
   <%= csrf_meta_tags %>
-  <meta charset='utf-8'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
- <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-      <link href='style.css' rel='stylesheet'>  
-   
 
+    <meta charset='utf-8'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href='style.css' rel='stylesheet'>  
 </head>
+
 <body class="background">
   <div id='cssmenu'>
     <ul>
         <li><a><%= link_to 'Inicio',  root_path(@decision)%></a></li>
         <li><a><%= link_to 'Nueva Decisión',  new_decision_path(@decision)%></a></li>
         <li id="enlace"><a><%= link_to 'Categorias',  new_decision_path(@decision)%></a></li>
-
 
         <% if current_user %> 
             <li><a><%= link_to "Log out", logout_path, method: "delete" %></a></li>
@@ -35,7 +33,6 @@
 
 <%= yield %>
 <%= javascript_include_tag 'application'%>
-<script src="http://code.jquery.com/jquery-1.7rc2.js"></script>
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
 </body>
 </html>
