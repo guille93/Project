@@ -6,21 +6,14 @@
   
   <%= csrf_meta_tags %>
   <meta charset='utf-8'>
-   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
-    <link href='style.css' rel='stylesheet'>
-
  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
- 
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-   
+      <link href='style.css' rel='stylesheet'>  
    
 
 </head>
-<body>
+<body class="background">
   <div id='cssmenu'>
     <ul>
         <li><a><%= link_to 'Inicio',  root_path(@decision)%></a></li>
@@ -30,7 +23,7 @@
 
         <% if current_user %> 
             <li><a><%= link_to "Log out", logout_path, method: "delete" %></a></li>
-            <div class="email"><img id="avatar" src="<%= current_user.avatar %>"><%= current_user.email %></div>
+            <div class="email"><img id="avatar" src="<%= current_user.avatar %>"><%= link_to(current_user.email, user_path(current_user)) %></div>
 
         <% else %> 
             <li><a><%= link_to "Login", 'login' %></a></li> 

@@ -29,17 +29,20 @@
 }
 #cssmenu {
   width: auto;
-  font-family: Raleway, sans-serif;
+  font-family: 'Raleway', sans-serif;
   line-height: 1;
 }
 #cssmenu > ul {
-  background: #3db2e1;
+  background: #418641;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 #cssmenu > ul > li {
   float: left;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
   perspective: 1000px;
+  margin-right: -24px;
 }
 #cssmenu.align-center > ul {
   font-size: 0;
@@ -59,7 +62,6 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  background: #3db2e1;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   -o-transition: all .3s;
@@ -142,3 +144,4 @@
 #cssmenu.small-screen #menu-button.menu-opened:before {
   background: #dff2fa;
 }
+

@@ -10,6 +10,9 @@ class DecisionsController < ApplicationController
 	def  show
 		@decision = Decision.find params[:id]
 	end
+	def last_decisions
+		@last_decisions = Decision.last_created_decisions(5)
+	end
 
 
 	def create

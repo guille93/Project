@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def show
       @user = User.find params[:id]
-      @decisions = @user.decisions
+      @decisions = @user.decisions.order(created_at: :desc)
   end
 	
   private

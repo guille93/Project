@@ -20,18 +20,22 @@ img {
 .options {
 	color:blue;
 	text-align: center;
+	color:rgb(29, 124, 36);
 }
 
 * {
 	font-family: 'Raleway', sans-serif;
 	font-size: 31px;
 
-}
-
-li {
-
 
 }
+
+.background {
+	background-color: #E1ECE1;
+}
+
+
+
 
 #lista-lateral li {
 list-style:none;
@@ -68,7 +72,7 @@ box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 }
 #vote2img {
 	margin-left: 76px;
-	text-decoration: none;
+	list-style: 
 }
 #vote1img {
 	margin-left: 76px;
@@ -124,18 +128,19 @@ box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 }
 
 #show {
-	text-align: center;
-	list-style: none;
-	margin-top: 131px;
-	border: 2px solid grey;
-	border-radius: 35px;
--webkit-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
+  text-align: center;
+  list-style: none;
+  margin-top: 0px;
+  padding-top: 61px;
+  margin-left: 90.5px;
+  background-color: #63A163;
+  color: white;
 }
 
 .user p {
 	font-size: 20px;
+	margin-left: 71px;
+  	margin-top: 13px;
 }
 .user {
 	margin-left: 10px;
@@ -144,7 +149,61 @@ box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 #userimg {
   height: 250px;
   width: 250px;
-  border: 5px solid #3DB2E1;
-  margin-top: 70px;
+  border: 5px solid #63A163;
+  margin-top: -119px;
+  margin-left: 72px;
 
+}
+
+.fondo {
+	height:332px ;
+	width: 100% ;
+	margin-top: -10px;
+}
+
+#lista {
+	font-size: 17px;
+	color:white;
+}
+
+#litles {
+	margin-top: 50px;
+	font-size: 20px;
+	color: white;
+}
+
+a {
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+}
+
+#marginmenu{
+  margin-left: 10px;
+}
+
+.form1 label {
+	text-align: center;
+	font-size: 20px;
+
+}
+.form1 input {
+	height: ;
+	width: ;
+
+}
+
+.form2 {
+	text-align: center;
+	font-size: 10px;
+}
+
+.form3 {
+	text-align: right;
+	font-size: 10px;
+}
+
+.email a {
+	font-size: 25px;
+	color: white;
 }
