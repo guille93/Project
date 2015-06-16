@@ -1,31 +1,49 @@
     <div  id="efect" >
       <section id="contain">
-        <div class="col-md-6 col-sm-6 options">
+        <div class="col-md-5 col-sm-5 options">
            <p class="name1"><%= @randomdecision.name_1 %></p>
            <img  class="decisionimage" src="<%= @randomdecision.image_1 %>">
-           <p id="vote1">
+          <p id="vote1">
            <%= @randomdecision.vote_1 %>
-          <span id="vote1img"><%= link_to '', vote_path(@randomdecision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%>
+            <span id="vote1img">
+              <% if @randomdecision.date > DateTime.now %>
+              <%= link_to '', vote_path(@randomdecision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%>
           </span>
+          <% else %>
+                  <%= "" %>
+            <% end %>
            </p>
         </div>
-        
-      
-    <div class="col-md-6 col-sm-6 options">
+         <div class="col-md-2 col-sm-2 options">
+            <div class="date">
+              Votación finaliza : <%= @randomdecision.date %>
+            </div>
+             <div class="category">
+              Categoría : <%= @randomdecision.category %>
+            </div>
+          </div>
+     
+    <div class="col-md-5 col-sm-5 options">
         <p class="name2"><%= @randomdecision.name_2 %></p>
           <img  class="decisionimage" src="<%= @randomdecision.image_2 %>">
         <p id="vote2">
-          <%= @randomdecision.vote_2 %><span id="vote2img"><%= link_to '', vote2_path(@randomdecision), :controller => :decisions, :action => :vote2, class: "glyphicon glyphicon-ok"%>
+
+          <%= @randomdecision.vote_2 %><span id="vote2img">
+          <% if @randomdecision.date > DateTime.now %>
+          <%= link_to '', vote2_path(@randomdecision), :controller => :decisions, :action => :vote2, class: "glyphicon glyphicon-ok"%>
+               <% else %>
+                  <%= "" %>
+            <% end %>
         </span>
         </p>
-
-
     </div>
-         
+ 
          <div class="col-md-12 col-sm-12 description">
+
             <p>
                 <%= @randomdecision.description %>
            </p>
+
           </div>
         
   </div>
