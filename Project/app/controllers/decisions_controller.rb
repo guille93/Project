@@ -3,6 +3,7 @@ class DecisionsController < ApplicationController
 	def index
 		@decisions = Decision.all
 		@randomdecision = @decisions.sample
+		@category = nil
 	end
 	def new
 		@decision = Decision.new 
@@ -10,6 +11,16 @@ class DecisionsController < ApplicationController
 	def  show
 		@decision = Decision.find params[:id]
 	end
+
+	def index_by_category
+		@decisions = Decision.all
+		@decisions = Decision.filter_by_category params[:category]
+		@randomdecision = @decisions.sample
+		binding.pry
+		flash[:category] = params[:category]
+		render 'index'
+	end
+
 	def last_decisions
 		@last_decisions = Decision.last_created_decisions(5)
 	end
@@ -28,20 +39,28 @@ class DecisionsController < ApplicationController
 		@decision = Decision.find params[:id]
 		@decision.vote_1 += 1
 		@decision.save
-		redirect_to root_path(@decision)
+		if flash[:category] == nil
+			redirect_to root_path
+		else
+			redirect_to category_path flash[:category]
+		end
 	end
 	def vote2
 		@decision = Decision.find params[:id]
 		@decision.vote_2 += 1
 		@decision.save
-		redirect_to root_path(@decision)
+		if flash[:category] == nil
+			redirect_to root_path
+		else
+			redirect_to category_path flash[:category]
+		end
 	end
 	def destroy
 		@decision = Decision.find params[:id]
 		@decision.destroy
 		redirect_to  user_path(current_user)
-
 	end
+	
 	private
 	def decision_params
 		params.require(:decision).permit(:category, :description, :name_1, :vote_1,:vote_2,:image_1,:name_2,:vote_2,:image_2)
