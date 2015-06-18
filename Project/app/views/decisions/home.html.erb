@@ -1,0 +1,32 @@
+<% @decisions.each do |decision| %>
+	<%= decision.category %>
+	<% end %>
+
+
+<div class="row">
+
+
+	<div class="col-md-3 col-sm-3" id="show">
+		<div id="titles">
+		 Decisiones más votadas
+		</div>
+		<hr>
+		<% @decisions.more_voted_decisions(5).each do |decision| %>
+			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', decision%> </li>
+		<% end %>
+	</div>
+	<% @decisions.each do |decision| %>
+		<% decision.vote_1 + decision.vote_2 %>
+
+	<div class="col-md-3 col-sm-3" id="show">
+		<div id="titles">
+			Últimas Decisiones 
+		</div>
+		
+		<hr>
+
+		<% @decisions.limit(2).each do |decision| %>
+			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', decision%> </li>
+		<% end %>
+	</div>
+</div>

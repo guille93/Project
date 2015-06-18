@@ -5,6 +5,10 @@ class DecisionsController < ApplicationController
 		@randomdecision = @decisions.sample
 		@category = nil
 	end
+	def home
+		@decisions = Decision.all
+		@more_voted = []
+	end
 	def new
 		@decision = Decision.new 
 	end
@@ -16,7 +20,6 @@ class DecisionsController < ApplicationController
 		@decisions = Decision.all
 		@decisions = Decision.filter_by_category params[:category]
 		@randomdecision = @decisions.sample
-		binding.pry
 		flash[:category] = params[:category]
 		render 'index'
 	end
@@ -24,7 +27,9 @@ class DecisionsController < ApplicationController
 	def last_decisions
 		@last_decisions = Decision.last_created_decisions(5)
 	end
-
+	def more_voted
+		@more_voted = Decision.more_voted_decisions(5)
+	end
 
 	def create
 		@decisions = Decision.new decision_params

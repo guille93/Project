@@ -242,3 +242,10 @@ a {
 
 	margin-left: 10px;
 }
+
+.bar {
+	background-color:#0C0;
+	height:19px;
+	border-radius:7px 3px 3px 7px;
+    width:100%;
+}

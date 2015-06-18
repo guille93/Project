@@ -32,7 +32,7 @@
 		
 		<hr>
 
-		<% @decisions.limit(2).each do |decision| %>
+		<% @decisions.last_created_decisions(2).each do |decision| %>
 			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', decision%> </li>
 		<% end %>
 	</div>
