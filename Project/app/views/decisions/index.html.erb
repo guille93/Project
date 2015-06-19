@@ -2,7 +2,7 @@
       <section id="contain">
         <div class="col-md-4 col-sm-4 option1">
            <p class="name1"><%= @randomdecision.name_1 %></p>
-           <img  class="decisionimage" src="<%= @randomdecision.image_1 %>">
+           <img  class="decisionimage" src="<%= @randomdecision.image_1_url.to_s %>">
           <p id="vote1">
            <%= @randomdecision.vote_1 %>
             <span id="vote1img">
@@ -25,7 +25,7 @@
      
     <div class="col-md-4 col-sm-4 option2">
         <p class="name2"><%= @randomdecision.name_2 %></p>
-          <img  class="decisionimage" src="<%= @randomdecision.image_2 %>">
+          <img  class="decisionimage" src="<%= @randomdecision.image_2_url.to_s %>">
         <p id="vote2">
 
           <%= @randomdecision.vote_2 %><span id="vote2img">

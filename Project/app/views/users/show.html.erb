@@ -1,7 +1,7 @@
-<img class="fondo" src="<%= @user.fondo %>">
+<img class="fondo" src="<%= @user.fondo_url.to_s %>">
 <div class="row">
 	<div class="col-md-4 col-sm-4 user">
-		<img id="userimg" src="<%= @user.avatar %>">
+		<img id="userimg" src="<%= @user.avatar_url.to_s %>">
 		<p>
 		Usuario: <%= @user.first_name %> <%= @user.last_name %> 
 		</p>

@@ -2,7 +2,7 @@
       <section id="contain">
         <div class="col-md-6 col-sm-6 options">
             <p class="name1"><%= @decision.name_1 %></p>
-            <img  class="decisionimage" src="<%= @decision.image_1 %>">
+            <img  class="decisionimage" src="<%= @decision.image_1_url.to_s %>">
             <p id="vote1">
 
             <%= @decision.vote_1 %><span id="vote1img"><%= link_to '', vote_path(@decision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%></span>
@@ -11,7 +11,7 @@
         
     <div class="col-md-6 col-sm-6 options">
         <p class="name2"><%= @decision.name_2 %></p>
-          <img  class="decisionimage" src="<%= @decision.image_2 %>">
+          <img  class="decisionimage" src="<%= @decision.image_2_url.to_s %>">
         <p id="vote2">
           <%= @decision.vote_2 %><span id="vote2img"><%= link_to '', vote2_path(@decision), :controller => :decisions, :action => :vote2, class: "glyphicon glyphicon-ok"%>
         </span>

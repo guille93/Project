@@ -1,5 +1,7 @@
 class Decision < ActiveRecord::Base
 	belongs_to :user
+	mount_uploader :image_1, ImageUploader
+	mount_uploader :image_2, ImageUploader
 	def self.last_created_decisions n
 		Decision.order(created_at: :desc).limit(n)
 	end

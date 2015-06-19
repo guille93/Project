@@ -1,10 +1,10 @@
 <div class="form1">
-<%= form_for @decision do |f| %>
+<%= form_for @decision, :html => {:multipart => true} do |f| %>
  <%= f.label :Nombre_Primera_Opción %>
  <%= f.text_field :name_1 %>
  <br>
    <%= f.label :Imagen_1 %>
- <%= f.text_field :image_1 %>
+ <%= f.file_field :image_1 %>
  <br>
  </div>
  <div class="form1">
@@ -13,12 +13,12 @@
 
  <br>
   <%= f.label :Imagen_2 %>
- <%= f.text_field :image_2 %>
+ <%= f.file_field :image_2 %>
 </div>
 <div class="form1">
 <br>
  <%= f.label :category %>
- <%= f.select :category,  options_for_select([ "Música", "Libros", "Consolas/Videojuegos", "Informática", "Conciertos", "Cine"], "Música") %>
+ <%= f.select :category,  options_for_select([ "musica", "libros","informática"], "Música") %>
  <br>
  <%= f.label :description %>
  <%= f.text_field :description %>

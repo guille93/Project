@@ -33,7 +33,7 @@ class DecisionsController < ApplicationController
 
 	def create
 		@decisions = Decision.new decision_params
-		if @decision.save
+		if @decisions.save
 			redirect_to root_path
 		else
 			render 'new'
@@ -68,6 +68,6 @@ class DecisionsController < ApplicationController
 	
 	private
 	def decision_params
-		params.require(:decision).permit(:category, :description, :name_1, :vote_1,:vote_2,:image_1,:name_2,:vote_2,:image_2)
+		params.require(:decision).permit(:category, :description, :name_1, :vote_1,:vote_2,:image_1,:name_2,:vote_2,:image_2,:date)
 	end
 end

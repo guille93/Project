@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619101041) do
+ActiveRecord::Schema.define(version: 20150619130057) do
 
   create_table "decisions", force: :cascade do |t|
     t.string   "name_1"
     t.integer  "vote_1",      default: 0
-    t.text     "image_1"
     t.string   "name_2"
     t.integer  "vote_2",      default: 0
-    t.text     "image_2"
     t.string   "category"
     t.string   "description"
     t.integer  "user_id"
     t.date     "date"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "image_1"
+    t.string   "image_2"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,11 +33,10 @@ ActiveRecord::Schema.define(version: 20150619101041) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "avatar"
-    t.string   "fondo"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "image"
+    t.string   "avatar"
+    t.string   "fondo"
   end
 
 end
