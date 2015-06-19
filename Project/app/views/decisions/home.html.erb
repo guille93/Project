@@ -4,7 +4,9 @@
 
 
 <div class="row">
-
+	<% @decisions.each do |decision| %>
+		<% decision.vote_1 + decision.vote_2 %>
+<% end %>
 
 	<div class="col-md-3 col-sm-3" id="show">
 		<div id="titles">
@@ -15,9 +17,6 @@
 			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', decision%> </li>
 		<% end %>
 	</div>
-	<% @decisions.each do |decision| %>
-		<% decision.vote_1 + decision.vote_2 %>
-
 	<div class="col-md-3 col-sm-3" id="show">
 		<div id="titles">
 			Últimas Decisiones 
@@ -29,4 +28,24 @@
 			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', decision%> </li>
 		<% end %>
 	</div>
+		<div class="col-md-3 col-sm-3" id="show">
+		<div id="titles">
+			Decisiones Finalizadas
+		</div>
+		
+		<hr>
+
+		<% @decisions.each do |decision| %>
+			<% if decision.date < DateTime.now %>
+				<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', decision%> </li>
+			<% end %>
+		<% end %>
+	</div>
 </div>
+<!--
+<div id="slider">
+    <div>HOLA</div>
+    <div>que tal</div>
+    <div>bien</div>
+</div>
+-->

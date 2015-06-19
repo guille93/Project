@@ -20,7 +20,7 @@
 
         <% if current_user %> 
             <li><a><%= link_to "Log out", logout_path, method: "delete" %></a></li>
-            <div class="email"><img id="avatar" src="<%= current_user.avatar %>"><%= link_to(current_user.email, user_path(current_user)) %></div>
+            <div class="email"><img id="avatar" src="<%= current_user.avatar_url.to_s %>"><%= link_to(current_user.email, user_path(current_user)) %></div>
 
         <% else %> 
             <li><a><%= link_to "Login", 'login' %></a></li> 
@@ -29,6 +29,7 @@
         <% end %>  
     </ul>
   </div>
+<!--
 <ul class="nav nav-pills">
   <li role="presentation" class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -41,6 +42,7 @@
     </ul>
   </li>
 </ul>
+-->
 <%= yield %>
 <%= javascript_include_tag 'application'%>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
