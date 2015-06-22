@@ -46,9 +46,8 @@ class DecisionsController < ApplicationController
 	def vote1
 		@decision = Decision.find params[:id]
 		@decision.vote_1 += 1
-		if @decision.save
-			@user.array_users.push(current_user.id)
-			binding.pry
+		@decision.array_users.push(current_user.id)
+		if 	@decision.save
 			if flash[:category] == nil
 				redirect_to root_path
 			else
@@ -74,6 +73,6 @@ class DecisionsController < ApplicationController
 	
 	private
 	def decision_params
-		params.require(:decision).permit(:category, :description, :name_1, :vote_1,:vote_2,:image_1,:name_2,:vote_2,:image_2,:date)
+		params.require(:decision).permit(:category, :description, :name_1, :vote_1,:vote_2,:image_1,:name_2,:vote_2,:image_2,:date, :array_users)
 	end
 end

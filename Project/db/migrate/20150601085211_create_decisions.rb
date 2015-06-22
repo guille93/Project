@@ -9,6 +9,7 @@ class CreateDecisions < ActiveRecord::Migration
     	t.string :description
       t.integer :user_id
       t.date :date
+      t.text :array_users
       t.timestamps null: false
     end
   end

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150619130057) do
     t.string   "description"
     t.integer  "user_id"
     t.date     "date"
+    t.text     "array_users"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.string   "image_1"

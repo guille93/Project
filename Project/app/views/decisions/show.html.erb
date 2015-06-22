@@ -7,7 +7,11 @@
            <%= @decision.vote_1 %>
             <span id="vote1img">
               <% if @decision.date > DateTime.now %>
-              <%= link_to '', vote_path(@decision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%>
+              <% if @decision.array_users.blank? %> 
+                  <%= link_to '', vote_path(@decision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%>
+                <% else %>
+                    k
+                <% end %>
           </span>
           <% else %>
                   <%= "" %>
