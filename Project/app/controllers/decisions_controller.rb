@@ -15,6 +15,7 @@ class DecisionsController < ApplicationController
 	end
 	def  show
 		@decision = Decision.find params[:id]
+
 	end
 
 	def index_by_category
@@ -45,11 +46,14 @@ class DecisionsController < ApplicationController
 	def vote1
 		@decision = Decision.find params[:id]
 		@decision.vote_1 += 1
-		@decision.save
-		if flash[:category] == nil
-			redirect_to root_path
-		else
-			redirect_to category_path flash[:category]
+		if @decision.save
+			@user.array_users.push(current_user.id)
+			binding.pry
+			if flash[:category] == nil
+				redirect_to root_path
+			else
+				redirect_to category_path flash[:category]
+			end
 		end
 	end
 	def vote2
