@@ -10,6 +10,7 @@ class DecisionsController < ApplicationController
 		@more_voted = []
 	end
 	def new
+		@user = User.find params[:user_id]
 		@decision = Decision.new 
 	end
 	def  show
@@ -32,7 +33,8 @@ class DecisionsController < ApplicationController
 	end
 
 	def create
-		@decisions = Decision.new decision_params
+		@user = User.find params[:user_id]
+		@decisions = @user.decisions.new decision_params
 		if @decisions.save
 			redirect_to root_path
 		else

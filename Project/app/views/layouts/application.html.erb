@@ -16,7 +16,7 @@
   <div id='cssmenu'>
     <ul>
         <li><a><%= link_to 'Inicio',  root_path(@decision)%></a></li>
-        <li><a><%= link_to 'Nueva Decisión',  new_decision_path(@decision)%></a></li>
+        <li><a><%= link_to 'Nueva Decisión',  new_user_decision_path(current_user.id, @decision)%></a></li>
 
         <% if current_user %> 
             <li><a><%= link_to "Log out", logout_path, method: "delete" %></a></li>

@@ -1,5 +1,5 @@
 <div class="form1">
-<%= form_for @decision, :html => {:multipart => true} do |f| %>
+<%= form_for [@user,@decision], :html => {:multipart => true} do |f| %>
  <%= f.label :Nombre_Primera_Opción %>
  <%= f.text_field :name_1 %>
  <br>

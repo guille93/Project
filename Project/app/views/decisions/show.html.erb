@@ -1,27 +1,50 @@
-<div  id="efect" >
+ <div  id="efect" >
       <section id="contain">
-        <div class="col-md-6 col-sm-6 options">
-            <p class="name1"><%= @decision.name_1 %></p>
-            <img  class="decisionimage" src="<%= @decision.image_1_url.to_s %>">
-            <p id="vote1">
-
-            <%= @decision.vote_1 %><span id="vote1img"><%= link_to '', vote_path(@decision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%></span>
-            </p>
+        <div class="col-md-4 col-sm-4 option1">
+           <p class="name1"><%= @decision.name_1 %></p>
+           <img  class="decisionimage" src="<%= @decision.image_1_url.to_s %>">
+          <p id="vote1">
+           <%= @decision.vote_1 %>
+            <span id="vote1img">
+              <% if @decision.date > DateTime.now %>
+              <%= link_to '', vote_path(@decision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%>
+          </span>
+          <% else %>
+                  <%= "" %>
+            <% end %>
+           </p>
         </div>
-        
-    <div class="col-md-6 col-sm-6 options">
+         <div class="col-md-4 col-sm-4 option3">
+            <div class="category">
+              Categoría : <%= @decision.category %>
+            </div>
+            <div class="date">
+              Votación termina : <%= @decision.date %>
+            </div>
+          </div>
+     
+    <div class="col-md-4 col-sm-4 option2">
         <p class="name2"><%= @decision.name_2 %></p>
           <img  class="decisionimage" src="<%= @decision.image_2_url.to_s %>">
         <p id="vote2">
-          <%= @decision.vote_2 %><span id="vote2img"><%= link_to '', vote2_path(@decision), :controller => :decisions, :action => :vote2, class: "glyphicon glyphicon-ok"%>
+
+          <%= @decision.vote_2 %><span id="vote2img">
+          <% if @decision.date > DateTime.now %>
+          <%= link_to '', vote2_path(@decision), :controller => :decisions, :action => :vote2, class: "glyphicon glyphicon-ok"%>
+               <% else %>
+                  <%= "" %>
+            <% end %>
         </span>
         </p>
     </div>
-         
-    <div class="col-md-12 col-sm-12 description">
-         <p>
-           <%= @decision.description %>
-        </p>
-    </div>
-     </section>   
-</div>
+ 
+         <div class="col-md-12 col-sm-12 description">
+        <div class="bar" ></div>
+            <p>
+                <%= @decision.description %>
+           </p>
+
+          </div>
+
+  </div>
+  </section>
