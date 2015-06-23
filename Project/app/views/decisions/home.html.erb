@@ -14,7 +14,8 @@
 		</div>
 		<hr>
 		<% @decisions.more_voted_decisions(5).each do |decision| %>
-			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', user_decision_path(@user,decision)%> </li>
+		<% binding.pry %>
+			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', user_decision_path(decision.user_id, decision)%> </li>
 		<% end %>
 	</div>
 	<div class="col-md-3 col-sm-3" id="show">
@@ -25,7 +26,7 @@
 		<hr>
 
 		<% @decisions.limit(2).each do |decision| %>
-			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', user_decision_path(@user,decision)%> </li>
+			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', user_decision_path(decision.user_id,decision)%> </li>
 		<% end %>
 	</div>
 		<div class="col-md-3 col-sm-3" id="show">
@@ -37,7 +38,7 @@
 
 		<% @decisions.each do |decision| %>
 			<% if decision.date < DateTime.now %>
-				<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', user_decision_path(@user,decision)%> </li>
+				<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', user_decision_path(decision.user_id,decision)%> </li>
 			<% end %>
 		<% end %>
 	</div>
