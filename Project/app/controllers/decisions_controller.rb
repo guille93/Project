@@ -7,7 +7,6 @@ class DecisionsController < ApplicationController
 	end
 	def home
 		@decisions = Decision.all
-		@more_voted = []
 	end
 	def new
 		@user = User.find params[:user_id]
