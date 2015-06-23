@@ -94,36 +94,10 @@ box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 
 .email{
 	font-size: 25px;
+	padding-right: 25px;
 	color:white;
 	padding-top: 24px;
 	float: right;
-}
-
-.name1 {
-}
-.name2 {
-
-}
-
-#musica {
-
-	font-family: segoe script;
-}
-#conciertos {
-
-	font-family: segoe script;
-}
-#cine {
-
-	font-family: segoe script;
-}
-#informatica {
-
-	font-family: segoe script;
-}
-#libros {
-
-	font-family: segoe script;
 }
 
 
@@ -196,12 +170,28 @@ a {
 #marginmenu{
   margin-left: 10px;
 }
-
 .form1 {
-	text-align: center;
+	border: 2px solid grey;
 }
+.form1 label {
+	font-size: 20px;
+}
+
 .form1 input {
-	text-align: center;
+
+	font-size: 20px;
+}
+
+.form1 file_field {
+	font-size: 20px;
+}
+.form1 select {
+	font-size: 20px;
+}
+.form1 textarea {
+  padding-top: 3px;
+  margin-top: 15px;
+font-size: 20px;
 }
 
 .form2 {
@@ -244,4 +234,12 @@ a {
 	height:19px;
 	border-radius:7px 3px 3px 7px;
     width:100%;
+}
+
+.btn-decision {
+	  margin-left: 128px;
+}
+
+.newimg {
+	margin-top: 15px;
 }
