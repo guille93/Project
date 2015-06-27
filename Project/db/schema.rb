@@ -15,16 +15,16 @@ ActiveRecord::Schema.define(version: 20150619130057) do
 
   create_table "decisions", force: :cascade do |t|
     t.string   "name_1"
-    t.integer  "vote_1",      default: 0
+    t.integer  "vote_1",      default: 16
     t.string   "name_2"
-    t.integer  "vote_2",      default: 0
+    t.integer  "vote_2",      default: 14
     t.string   "category"
     t.string   "description"
     t.integer  "user_id"
     t.date     "date"
     t.text     "array_users"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "image_1"
     t.string   "image_2"
   end

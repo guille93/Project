@@ -20,7 +20,8 @@
 		</div>
 		<hr>
 		<% @decisions.each do |decision| %>
-			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', user_decision_path(@user,decision)%> <%= link_to 'Eliminar', user_decision_path(@user,decision), method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to '', user_decision_path(@user,decision), class: "glyphicon glyphicon-eye-open" %> 
+				<%= link_to '', user_decision_path(@user,decision), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %></li>
 
 		<% end %>
 	</div>
@@ -33,7 +34,8 @@
 		<hr>
 
 		<% @decisions.last_created_decisions(2).each do |decision| %>
-			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', user_decision_path(@user,decision)%> </li>
+			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to '', user_decision_path(@user,decision), class: "glyphicon glyphicon-eye-open"%>
+			<%= link_to '', user_decision_path(@user,decision), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %></li>
 		<% end %>
 	</div>
 </div>

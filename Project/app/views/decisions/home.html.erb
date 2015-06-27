@@ -1,8 +1,3 @@
-<% @decisions.each do |decision| %>
-	<%= decision.category %>
-	<% end %>
-
-
 <div class="row">
 	<% @decisions.each do |decision| %>
 		<% decision.vote_1 + decision.vote_2 %>
@@ -14,7 +9,6 @@
 		</div>
 		<hr>
 		<% @decisions.more_voted_decisions(5).each do |decision| %>
-		<% binding.pry %>
 			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to 'Mostrar', user_decision_path(decision.user_id, decision)%> </li>
 		<% end %>
 	</div>
@@ -42,6 +36,25 @@
 			<% end %>
 		<% end %>
 	</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-3" id="show">
+		<div id="titles">
+		 Categorias
+		</div>
+		<hr>
+		<% @decisions.each do |decision| %>
+			<li id="lista"><%= decision.category %><%= link_to 'Mostrar', category_path(decision)%></li>
+		<% end %>
+		</div>
+	</div>
+</div>
+
+<!--
+<div id="slider">
+    <div>HOLA</div>
+    <div>que tal</div>
+    <div>bien</div>
 </div>
 <!--
 <div id="slider">

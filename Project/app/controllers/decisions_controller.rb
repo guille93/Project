@@ -64,6 +64,21 @@ class DecisionsController < ApplicationController
 			redirect_to category_path flash[:category]
 		end
 	end
+	def edit
+		@decision = Decision.find params[:id]
+		@user = User.find params[:user_id]
+	end
+	def update
+		@decision = Decision.find params[:id]
+
+		if @decision.update decision_params
+			redirect_to @decision
+		else
+			render 'edit'
+		end
+
+	end
+
 	def destroy
 		@decision = Decision.find params[:id]
 		@decision.destroy

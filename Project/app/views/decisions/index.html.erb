@@ -7,8 +7,8 @@
             <%= @randomdecision.vote_1 %>
             <span id="vote1img">
               <% if @randomdecision.date > DateTime.now %>
-                <% user_in_decision = @randomdecision.array_users.find{|id| id ==  current_user.id } %>
 
+                <% user_in_decision = @randomdecision.array_users.find{|id| id ==  current_user.id } %>
                 <% if user_in_decision.blank? %> 
                   <%= link_to '', vote_path(@randomdecision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%>
                 <% else %>
@@ -49,13 +49,20 @@
         </p>
     </div>
  
-         <div class="col-md-12 col-sm-12 description">
-        <div class="bar" ></div>
-            <p>
-                <%= @randomdecision.description %>
-           </p>
-
-          </div>
+         <div class="col-md-12 col-sm-12">
+<div class="progress">
+  <div class="progress-bar progress-bar-success" style="width: 60%">
+    <span class="sr-only">35% Complete (success)</span>
+  </div>
+  <div class="progress-bar progress-bar-info" style="width: 40%">
+    <span class="sr-only">20% Complete (warning)</span>
+  </div>
+    </div>
 
   </div>
+  <div class="col-md-12 col-sm-12 description">
+              <p>
+                <%= @randomdecision.description %>
+           </p>
+         </div>
   </section>
