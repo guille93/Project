@@ -3,6 +3,8 @@ class DecisionsController < ApplicationController
 	def index
 		@decisions = Decision.all
 		@randomdecision = @decisions.sample
+		@media2 = @randomdecision.vote_2*100/(@randomdecision.vote_1+@randomdecision.vote_2).round
+		@media1 = @randomdecision.vote_1*100/(@randomdecision.vote_1+@randomdecision.vote_2).round
 		@category = nil
 	end
 	def home
@@ -54,6 +56,7 @@ class DecisionsController < ApplicationController
 			end
 		end
 	end
+	
 	def vote2
 		@decision = Decision.find params[:id]
 		@decision.vote_2 += 1

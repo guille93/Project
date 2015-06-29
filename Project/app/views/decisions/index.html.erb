@@ -27,6 +27,14 @@
             <div class="date">
               Votación termina : <%= @randomdecision.date %>
             </div>
+            <div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: <%= @media1 %>% ">
+      <span class="sr-only"></span>
+    </div>
+    <div class="progress-bar progress-bar-info" style="width: <%= @media2 %>% ">
+      <span class="sr-only"></span>
+    </div>
+      </div>
           </div>
      
     <div class="col-md-4 col-sm-4 option2">
@@ -49,20 +57,13 @@
         </p>
     </div>
  
-         <div class="col-md-12 col-sm-12">
-<div class="progress">
-  <div class="progress-bar progress-bar-success" style="width: 60%">
-    <span class="sr-only">35% Complete (success)</span>
-  </div>
-  <div class="progress-bar progress-bar-info" style="width: 40%">
-    <span class="sr-only">20% Complete (warning)</span>
-  </div>
-    </div>
+  <div class="col-md-12 col-sm-12">
+    
 
-  </div>
-  <div class="col-md-12 col-sm-12 description">
-              <p>
+    </div>
+    <div class="col-md-12 col-sm-12 description">
+            <p>
                 <%= @randomdecision.description %>
            </p>
-         </div>
+    </div>
   </section>

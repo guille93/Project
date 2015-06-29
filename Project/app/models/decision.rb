@@ -13,4 +13,5 @@ class Decision < ActiveRecord::Base
 	def self.more_voted_decisions n
 		Decision.order(vote_1: :desc).limit(n)
 	end
+	
 end
