@@ -1,4 +1,4 @@
- <div  id="efect" >
+     <div  id="efect" >
       <section id="contain">
         <div class="col-md-4 col-sm-4 option1">
            <p class="name1"><%= @decision.name_1 %></p>
@@ -7,26 +7,34 @@
             <%= @decision.vote_1 %>
             <span id="vote1img">
               <% if @decision.date > DateTime.now %>
-                <% user_in_decision = @decision.array_users.find{|id| id ==  current_user.id } %>
 
+                <% user_in_decision = @decision.array_users.find{|id| id ==  current_user.id } %>
                 <% if user_in_decision.blank? %> 
-                  <%= link_to '', vote_path(@decision),:controller => :decisions, :action => :vote1, class: "glyphicon glyphicon-ok"%>
+                  <%= link_to 'Votar', vote_path(@decision),:controller => :decisions, :action => :vote1, class: "btn btn-success"%>
                 <% else %>
                  <span class="glyphicon glyphicon-remove"></span>
                 <% end %>
             </span>
               <% else %>
-                <%= "" %>
+                <span class="btn btn-success">Votación Finalizada</span>
               <% end %>
           </p>
         </div>
          <div class="col-md-4 col-sm-4 option3">
             <div class="category">
-              Categoría : <%= @decision.category %>
+              Categoría : <%= link_to(@decision.category, category_path(@decision.category)) %>
             </div>
             <div class="date">
               Votación termina : <%= @decision.date %>
             </div>
+            <div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: <%= @media1 %>% ">
+      <span class="sr-only"></span>
+    </div>
+    <div class="progress-bar progress-bar-info" style="width: <%= @media2 %>% ">
+      <span class="sr-only"></span>
+    </div>
+      </div>
           </div>
      
     <div class="col-md-4 col-sm-4 option2">
@@ -37,25 +45,25 @@
           <%= @decision.vote_2 %><span id="vote2img">
           <% if @decision.date > DateTime.now %>
           <% if user_in_decision.blank? %>
-          <%= link_to '', vote2_path(@decision), :controller => :decisions, :action => :vote2, class: "glyphicon glyphicon-ok"%>
+          <%= link_to 'Votar', vote2_path(@decision), :controller => :decisions, :action => :vote2, class: "btn btn-success"%>
            <% else %>
            <span class="glyphicon glyphicon-remove"></span>
 
            <% end %>
                <% else %>
-                  <%= "" %>
+                  <span class="btn btn-success">Votación Finalizada</span>
             <% end %>
         </span>
         </p>
     </div>
  
-         <div class="col-md-12 col-sm-12 description">
-        <div class="bar" ></div>
+  <div class="col-md-12 col-sm-12">
+    
+
+    </div>
+    <div class="col-md-12 col-sm-12 description">
             <p>
                 <%= @decision.description %>
            </p>
-
-          </div>
-
-  </div>
+    </div>
   </section>

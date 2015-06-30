@@ -3,8 +3,8 @@ class DecisionsController < ApplicationController
 	def index
 		@decisions = Decision.all
 		@randomdecision = @decisions.sample
-		@media2 = (@randomdecision.vote_2*100/(@randomdecision.vote_1+@randomdecision.vote_2).to_f).round
 		@media1 = (@randomdecision.vote_1*100/(@randomdecision.vote_1+@randomdecision.vote_2).to_f).round
+		@media2 = (@randomdecision.vote_2*100/(@randomdecision.vote_1+@randomdecision.vote_2).to_f).round
 		@category = nil
 	end
 	def home
@@ -16,6 +16,8 @@ class DecisionsController < ApplicationController
 	end
 	def  show
 		@decision = Decision.find params[:id]
+		@media2 = (@decision.vote_2*100/(@decision.vote_1+@decision.vote_2).to_f).round
+		@media1 = (@decision.vote_1*100/(@decision.vote_1+@decision.vote_2).to_f).round
 
 	end
 
@@ -38,7 +40,7 @@ class DecisionsController < ApplicationController
 		@user = User.find params[:user_id]
 		@decisions = @user.decisions.new decision_params
 		if @decisions.save
-			redirect_to root_path
+			redirect_to user_path(current_user)
 		else
 			render 'new'
 		end
@@ -60,8 +62,9 @@ class DecisionsController < ApplicationController
 	def vote2
 		@decision = Decision.find params[:id]
 		@decision.vote_2 += 1
-		@decision.save
-		if flash[:category] == nil
+		@decision.array_users.push(current_user.id)
+		if @decision.save
+			flash[:category] == nil
 			redirect_to root_path
 		else
 			redirect_to category_path flash[:category]

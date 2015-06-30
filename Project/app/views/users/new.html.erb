@@ -2,16 +2,18 @@
   <div class="container">
     <div class="form">
 
-    <h1>Sign up</h1>
+    <h1>Registrarse</h1>
 
     <%= form_for @user, :html => {:multipart => true} do |f| %>
       <%= f.text_field :first_name, :placeholder => "First name" %>
       <%= f.text_field :last_name, :placeholder => "Last name" %>
       <%= f.email_field :email, :placeholder => "Email" %>
       <%= f.password_field :password, :placeholder => "Password" %>
+      <%= f.label :Elige_tu_foto_de_Perfil %>
       <%= f.file_field :avatar, :placeholder => "Enlace imagen Avatar" %>
+      <%= f.label :Elige_tu_foto_de_Portada %>
       <%= f.file_field :fondo, :placeholder => "Enlace imagen fondo" %>
-      <%= f.submit "Create an account", class: "btn-submit" %>
+      <%= f.submit "Crear la cuenta", class: "btn-submit" %>
     <% end %>
 
 

@@ -13,8 +13,9 @@ img {
 	height: 42px;
 }
 
-.description {
+.description p {
 	text-align: center;
+	font-size: 20px;
 }
 
 .option1 {
@@ -70,17 +71,19 @@ font-size: 20px;
 	margin-top: 16px;
 	margin-bottom: 16px;
 	border-radius: 35px;
--webkit-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
+	box-shadow: 0px 4px 62px 14px rgba(0,0,0,0.75);
 	overflow: hidden;
 }
 
 #vote1{
-
+  font-family: -webkit-pictograph;
+  margin-left: 50px;
 
 }
 #vote2{
+	  font-family: -webkit-pictograph;
 	padding-top: 6px;
 	margin-right: -49px;
 }
@@ -175,6 +178,10 @@ a {
 #marginmenu{
   margin-left: 10px;
 }
+
+.form label{
+	  font-size: 22px;
+}
 .form1 {
 	border: 2px solid grey;
 }
@@ -228,6 +235,10 @@ font-size: 20px;
 .category {
 	font-size: 24px;
 }
+.category a {
+	color: #667C24;
+	font-size: 22px;
+}
 
 .margin {
 
@@ -249,6 +260,19 @@ font-size: 20px;
 	margin-top: 15px;
 }
 
-.progress-bar-success {
-	 
+.progress {
+	margin-top: 377px;
+	  margin-left: 8px;
+  margin-right: -14px;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  margin-right: 48px;
+}
+
+.btn {
+
 }

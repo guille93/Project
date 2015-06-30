@@ -1,55 +1,48 @@
 <%= form_for [@user,@decision], :html => {:multipart => true} do |f| %>
-<div class="form1">
-<div class="row">
-<div class="col-md-4 col-sm-4">
- <%= f.label :Primera_Opción%>
- <%= f.text_field :name_1, autofocus: true, placeholder: 'Título del Objeto' %>
-</div>
-<div class="col-md-1 col-sm-1">
-   <%= f.label :Imagen_1 %>
-</div>
-<div class="col-md-4 col-sm-4 newimg">
- 	<%= f.file_field :image_1 %>
-
- </div>
-  </div>
- <div class="row">
- <div class="col-md-4 col-sm-4">
-  <%= f.label :Segunda_Opción %>
- <%= f.text_field :name_2, placeholder: 'Título del Objeto' %>
-</div>
- <div class="col-md-1 col-sm-1">
-   <%= f.label :Imagen_2 %>
-</div>
-<div class="col-md-4 col-sm-4 newimg">
- 	<%= f.file_field :image_2 %>
-
- </div>
-</div>
-<div class="row">
- <div class="col-md-4 col-sm-4">
- 	<br>
- <%= f.label :Categoría %>
- <%= f.select :category,  options_for_select([ "Música", "Libros","Informática", "Móviles"], "Música") %>
-</div>
-<div class="col-md-4 col-sm-4">
- <%= f.label :Descripción %>
- <%= f.text_area :description %>
-</div>
-</div>
-<br>
- <%= f.label :disponible_hasta %>
- <%= f.date_field :date %>
- <br>
- <%= f.hidden_field :vote_1, :value => (10..40).to_a.sample %>
- <%= f.hidden_field :vote_2, :value => (10..40).to_a.sample %>
- <span class="btn-decision">
- <%= f.submit 'Enviar', class: "btn-submit" %>
-</span>
- <% end %>
-
-
-</div>
-</div>
-</div>
+	<div class="form1">
+		<div class="row">
+			<div class="col-md-4 col-sm-4">
+				<%= f.label :Primera_Opción%>
+				<%= f.text_field :name_1, autofocus: true, placeholder: 'Título del Objeto' %>
+			</div>
+		<div class="col-md-1 col-sm-1">
+	   		<%= f.label :Imagen_1 %>
+		</div>
+		<div class="col-md-4 col-sm-4 newimg">
+	 	<%= f.file_field :image_1 %>
+	 	</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-4">
+			 <%= f.label :Segunda_Opción %>
+			 <%= f.text_field :name_2, placeholder: 'Título del Objeto' %>
+		</div>
+	 	<div class="col-md-1 col-sm-1">
+	   		<%= f.label :Imagen_2 %>
+		</div>
+		<div class="col-md-4 col-sm-4 newimg">
+	 	<%= f.file_field :image_2 %>
+	 	</div>
+	</div>
+		<div class="row">
+	 		<div class="col-md-4 col-sm-4">
+	 	<br>
+	 		<%= f.label :Categoría %>
+	 		<%= f.select :category,  options_for_select([ "Música", "Libros","Informática", "Móviles","Viajes"], "Música") %>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				 <%= f.label :Descripción %>
+				 <%= f.text_area :description %>
+			</div>
+		</div>
+	<br>
+	 <%= f.label :disponible_hasta %>
+	 <%= f.date_field :date %>
+	 <br>
+	 <%= f.hidden_field :vote_1, :value => (10..40).to_a.sample %>
+	 <%= f.hidden_field :vote_2, :value => (10..40).to_a.sample %>
+	 <span class="btn-decision">
+	 <%= f.submit 'Enviar', class: "btn-submit" %>
+	</span>
+	 <% end %>
 </div>

@@ -8,9 +8,6 @@
 		<p>
 		Email: <%= @user.email %> 
 		</p>
-		<p>
-		Fecha de Registro: <%= @user.created_at %> 
-		</p>
 	</div>
 
 
@@ -21,7 +18,7 @@
 		<hr>
 		<% @decisions.each do |decision| %>
 			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to '', user_decision_path(@user,decision), class: "glyphicon glyphicon-eye-open" %> 
-				<%= link_to '', user_decision_path(@user,decision), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %></li>
+				<%= link_to '', user_decision_path(@user,decision), method: :delete, data: { confirm: 'Vas a eliminar esta decisión' }, class: "glyphicon glyphicon-remove" %></li>
 
 		<% end %>
 	</div>
@@ -35,7 +32,7 @@
 
 		<% @decisions.last_created_decisions(2).each do |decision| %>
 			<li id="lista"><%= decision.name_1 %> Vs <%= decision.name_2 %> <%= link_to '', user_decision_path(@user,decision), class: "glyphicon glyphicon-eye-open"%>
-			<%= link_to '', user_decision_path(@user,decision), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %></li>
+			<%= link_to '', user_decision_path(@user,decision), method: :delete, data: { confirm: 'Vas a eliminar esta decisión' }, class: "glyphicon glyphicon-remove" %></li>
 		<% end %>
 	</div>
 </div>

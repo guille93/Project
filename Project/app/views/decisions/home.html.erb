@@ -1,7 +1,7 @@
 <div class="row">
 	<% @decisions.each do |decision| %>
 		<% decision.vote_1 + decision.vote_2 %>
-<% end %>
+	<% end %>
 
 	<div class="col-md-3 col-sm-3" id="show">
 		<div id="titles">
@@ -38,13 +38,13 @@
 	</div>
 </div>
 <div class="row">
-<div class="col-md-3 col-sm-3" id="show">
+	<div class="col-md-3 col-sm-3" id="show">
 		<div id="titles">
 		 Categorias
 		</div>
 		<hr>
 		<% @decisions.each do |decision| %>
-			<li id="lista"><%= decision.category %><%= link_to 'Mostrar', category_path(decision)%></li>
+			<li id="lista"><%= decision.category %><%= link_to 'Mostrar', category_path %></li>
 		<% end %>
 		</div>
 	</div>
